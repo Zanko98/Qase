@@ -8,7 +8,6 @@ public class ProjectList extends BasePage {
 
     public void openProjectList() {
         open("projects");
-
     }
 
     public void clickCreateNewProjectButton() {
