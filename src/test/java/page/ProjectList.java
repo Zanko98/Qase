@@ -1,7 +1,6 @@
 package page;
 
 import com.codeborne.selenide.ElementsCollection;
-
 import static com.codeborne.selenide.Selenide.*;
 
 public class ProjectList extends BasePage {
