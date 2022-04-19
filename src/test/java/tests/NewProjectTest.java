@@ -2,7 +2,6 @@ package tests;
 
 import dto.Project;
 import org.testng.annotations.Test;
-
 import static org.testng.AssertJUnit.assertEquals;
 
 public class NewProjectTest extends BaseTest {
