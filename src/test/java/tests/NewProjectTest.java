@@ -11,24 +11,29 @@ public class NewProjectTest extends BaseTest {
     public void createNewPublicProject() {
         loginPage.login();
         projectList.clickCreateNewProjectButton();
-        newProjectPage.createPublicNewProject(Project.builder()
-                .name("TMS")
+        String name = generateRandomName();
+        newProjectPage.createNewProject(Project.builder()
+                .name(name)
+                .descriptions("bala")
+                .accessType("Public")
                 .build());
         projectList.openProjectList();
-        assertEquals(projectList.gettingNameLatestProject(), "TMS");
+        assertEquals(projectList.getProjectName("last"), name);
     }
 
     @Test
     public void createNewPrivateProject() {
         loginPage.login();
         projectList.clickCreateNewProjectButton();
-        newProjectPage.createPrivateNewProject(Project.builder()
-                .name("bla")
+        String name = generateRandomName();
+        newProjectPage.createNewProject(Project.builder()
+                .name(name)
                 .descriptions("bla")
+                .accessType("Private")
                 .membersAccess("Add members from specific group")
                 .group("hi")
                 .build());
         projectList.openProjectList();
-        assertEquals(projectList.gettingNameLatestProject(), "bla");
+        assertEquals(projectList.getProjectName("last"), name);
     }
 }

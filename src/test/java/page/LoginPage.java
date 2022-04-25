@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class LoginPage extends BasePage {
 
-    @Test
     public void login() {
         open("login");
         $("#inputEmail").sendKeys("Zanko98@mail.ru");

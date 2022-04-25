@@ -1,7 +1,6 @@
 package page;
 
 import com.codeborne.selenide.ElementsCollection;
-
 import static com.codeborne.selenide.Selenide.*;
 
 public class ProjectList extends BasePage {
@@ -15,8 +14,11 @@ public class ProjectList extends BasePage {
         $("#createButton").click();
     }
 
-    public String gettingNameLatestProject() {
+    public String getProjectName(String index) {
         ElementsCollection element = $$(".defect-title");
-        return element.last().getText();
+        if(index.equals("last"))
+            return element.last().getText();
+        else
+            return element.get(Integer.parseInt(index)+1).getText();
     }
 }
